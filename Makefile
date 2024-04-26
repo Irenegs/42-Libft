@@ -32,10 +32,9 @@ CFLAGS		= -Wall -Wextra -Werror
 AR		= ar
 ARFLAGS	= -r -c -s
 
-FILE = .asdfa
-
 #------------------------------------------------#
-
+#   UTENSILS                                     #
+#------------------------------------------------#
 
 RM			= rm -f
 MAKE		= $(MAKE) --no-print-directory
@@ -49,11 +48,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
-bonus: $(FILE)
-
-$(FILE) : $(OBJS) $(BOBJS)
+bonus: $(OBJS) $(BOBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BOBJS)
-	@touch $(FILE)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< 
